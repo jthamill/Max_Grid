@@ -11,9 +11,9 @@
   grid-template-columns: 20% auto;
   grid-template-rows: [r1s] 4.5rem [r1e r2s] auto [r2e r3s] 4.5rem [r3e];
   grid-template-areas:
-    "head head head head"
-    "side main main main"
-    "foot foot foot foot";
+    "head head"
+    "side main"
+    "foot foot";
   gap: 0.5%;
 }
 
