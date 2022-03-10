@@ -4,26 +4,38 @@
 
 .container {
   margin: 20px;
-  height: 500px;
+  height: 800px;
+  /* width: 800px; */
   border: 5px solid black;
   display: grid;
   /* grid-auto-flow: column;*/
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: 5rem minmax(10px, auto);
+  grid-template-columns: repeat(4, 20%);
+  grid-template-rows: 5rem minmax(10px, 20rem) 100px;
   grid-template-areas:
     "head head head head"
-    ". . main main"
+    ". side main main"
     "foot foot foot foot";
   gap: 0.5%;
   justify-items: stretch;
-  align-items: center;
+  align-items: stretch;
+}
+
+@media (max-width: 40rem) {
+  .container {
+    grid-template-rows: 5rem minmax(10px, 20rem) 150px 100px;
+    grid-template-areas:
+      "head head head head"
+      "main main main main"
+      "side side side side"
+      "foot foot foot foot";
+  }
 }
 
 .el1 {
   background: rgba(255, 154, 72, 0.5);
-  /* grid-area: head; */
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-area: side;
+  /* grid-column-start: 2;
+  grid-column-end: 3; */
 }
 
 .el2 {
@@ -33,6 +45,8 @@
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3; */
+  /* justify-self: center;
+  align-self: center; */
 }
 
 .el3 {
